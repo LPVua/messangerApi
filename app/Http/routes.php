@@ -67,7 +67,7 @@ Route::group([ 'prefix' => 'api' ], function ()
 			{
 
 				get('', 'MessagesController@getMessage');
-				patch('', 'MessagesController@changeMessage');
+				patch('', 'MessagesController@changeSubject');
 				put('', 'MessagesController@updateMessage');
 			});
 		});

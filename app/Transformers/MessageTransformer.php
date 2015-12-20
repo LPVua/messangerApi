@@ -38,12 +38,22 @@ class MessageTransformer extends TransformerAbstract
 		];
 	}
 
+	/**
+	 * @param Message $message
+	 *
+	 * @return Fractal\Resource\Item
+	 */
 	public function includeSender(Message $message)
 	{
 
 		return $this->item($message->sender, new UserTransformer());
 	}
 
+	/**
+	 * @param Message $message
+	 *
+	 * @return Fractal\Resource\Item
+	 */
 	public function includeReceiver(Message $message)
 	{
 

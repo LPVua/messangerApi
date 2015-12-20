@@ -22,6 +22,9 @@ class UsersController extends Controller
 
 	use Apiable;
 
+	/**
+	 * @return \Symfony\Component\HttpFoundation\Response
+	 */
 	public function getAll()
 	{
 
@@ -30,6 +33,11 @@ class UsersController extends Controller
 		return $this->respond(Fractal::collection($users, new UserTransformer())->getArray());
 	}
 
+	/**
+	 * @param $user_id
+	 *
+	 * @return \Symfony\Component\HttpFoundation\Response
+	 */
 	public function getById($user_id)
 	{
 
@@ -40,6 +48,12 @@ class UsersController extends Controller
 		throw new NotFoundHttpException;
 	}
 
+	/**
+	 * @param CreateUserRequest $request
+	 * @param User              $user
+	 *
+	 * @return mixed
+	 */
 	public function createUser(CreateUserRequest $request, User $user)
 	{
 
@@ -50,6 +64,12 @@ class UsersController extends Controller
 		]);
 	}
 
+	/**
+	 * @param                 $user_id
+	 * @param UserEditRequest $request
+	 *
+	 * @return mixed
+	 */
 	public function editUser($user_id, UserEditRequest $request)
 	{
 
