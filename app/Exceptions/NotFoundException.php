@@ -17,6 +17,9 @@ class NotFoundException extends ApiException
 	 */
 	protected $status = '404';
 
+	/**
+	 * NotFoundException constructor.
+	 */
 	public function __construct()
 	{
 
